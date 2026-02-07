@@ -5,7 +5,7 @@ export default function Hero() {
     <section id="home" className="flex flex-col items-center justify-center min-h-screen text-center space-y-8 py-20">
       <div className="space-y-4 animate-in fade-in zoom-in duration-500 slide-in-from-bottom-5">
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent pb-2">
-          Hello, I&apos;m a Developer
+          Hello, I&apos;m a Thiruvelan C
         </h1>
         <p className="text-xl md:text-2xl text-gray-100 max-w-2xl mx-auto">
           Building digital experiences with modern technologies. Passionate about creating beautiful and functional web applications.
