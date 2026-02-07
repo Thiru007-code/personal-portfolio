@@ -23,8 +23,8 @@ export default function About() {
             <li className="relative">
               <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-blue-500 ring-4 ring-black"></span>
               <div className="flex flex-col">
-                <span className="text-white font-medium text-lg">B.Tech in Computer Science</span>
-                <span className="text-sm text-gray-400">XYZ University • 2022 - 2026</span>
+                <span className="text-white font-medium text-lg">B.E in Computer Science</span>
+                <span className="text-sm text-gray-400">Sona College Of Technology • 2023 - 2027</span>
                 <p className="mt-2 text-sm">Specialized in Full Stack Development and Artificial Intelligence.</p>
               </div>
             </li>
@@ -32,8 +32,8 @@ export default function About() {
               <span className="absolute -left-[37px] top-1 h-4 w-4 rounded-full bg-gray-600 ring-4 ring-black"></span>
               <div className="flex flex-col">
                 <span className="text-white font-medium text-lg">Higher Secondary</span>
-                <span className="text-sm text-gray-400">ABC School • 2020 - 2022</span>
-                <p className="mt-2 text-sm">Major in Physics, Chemistry, and Mathematics.</p>
+                <span className="text-sm text-gray-400">Wisdom Gates Matriculation School • 2022 - 2023</span>
+                <p className="mt-2 text-sm">Maths Computer Science.</p>
               </div>
             </li>
           </ul>
@@ -66,6 +66,14 @@ export default function About() {
              <div className="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-center">
                 <span className="text-3xl mb-2 block">📚</span>
                 <span className="text-sm font-medium text-gray-300">Reading</span>
+             </div>
+              <div className="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-center">
+                <span className="text-3xl mb-2 block">🏋️</span>
+                <span className="text-sm font-medium text-gray-300">Gym</span>
+             </div>
+             <div className="p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-center">
+                <span className="text-3xl mb-2 block">🎵</span>
+                <span className="text-sm font-medium text-gray-300">Music</span>
              </div>
           </div>
         </div>
