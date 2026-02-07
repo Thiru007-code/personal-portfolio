@@ -46,26 +46,14 @@ export default function Navbar() {
           <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-xl group-hover:rotate-12 transition-transform">P</div>
           <span className="self-center text-2xl font-bold whitespace-nowrap text-white tracking-wide">Portfolio</span>
         </Link>
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          type="button"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-200 rounded-lg md:hidden hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-gray-600 transition-colors"
-          aria-controls="navbar-default"
-          aria-expanded={isOpen}
-        >
-          <span className="sr-only">Open main menu</span>
-          <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-        </button>
-        <div className={`${isOpen ? 'block' : 'hidden'} w-full md:block md:w-auto`} id="navbar-default">
-          <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-800 rounded-2xl bg-gray-900/90 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-transparent backdrop-blur-xl md:backdrop-blur-none">
+        <div className="hidden md:block w-auto" id="navbar-default">
+          <ul className="font-medium flex flex-row space-x-8 rtl:space-x-reverse mt-0 border-0 bg-transparent">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-                  className="block py-2 px-3 rounded md:p-0 text-gray-200 hover:text-white relative group transition-colors"
+                  className="block py-2 px-3 p-0 text-gray-200 hover:text-white relative group transition-colors"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>

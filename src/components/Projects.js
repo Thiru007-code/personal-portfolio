@@ -28,16 +28,23 @@ const projects = [
 export default function Projects() {
   const [activeProject, setActiveProject] = useState(null);
 
+  const toggleProject = (index) => {
+      if (activeProject === index) {
+          setActiveProject(null);
+      } else {
+          setActiveProject(index);
+      }
+  };
+
   return (
     <section id="projects" className="py-20 px-4 md:px-8 max-w-7xl mx-auto min-h-[600px] flex flex-col justify-center">
-      <h2 className={`text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent transition-all duration-500 ${activeProject !== null ? 'mb-8' : 'mb-16'}`}>
+      <h2 className={`text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent transition-all duration-500`}>
         Featured Projects
       </h2>
 
-      <div className={`transition-all duration-500 ease-in-out ${activeProject !== null ? 'flex flex-col md:flex-row gap-8 items-start' : 'w-full'}`}>
-        
-        {/* Project Titles List / Grid */}
-        <div className={`w-full transition-all duration-500 ease-in-out ${activeProject !== null ? 'md:w-1/3 flex flex-col gap-4' : 'grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto'}`}>
+      {/* Desktop Layout: Split View */}
+      <div className="hidden md:flex transition-all duration-500 ease-in-out gap-8 items-start w-full">
+        <div className={`w-full transition-all duration-500 ease-in-out ${activeProject !== null ? 'w-1/3 flex flex-col gap-4' : 'grid grid-cols-2 gap-6 max-w-4xl mx-auto'}`}>
           {projects.map((project, index) => (
             <button
               key={index}
@@ -55,11 +62,9 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Right Side: Project Details Overview */}
         {activeProject !== null && (
-          <div className="w-full md:w-2/3 animate-in fade-in slide-in-from-right-10 duration-500">
-            <div className="h-full bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 relative overflow-hidden backdrop-blur-sm shadow-2xl">
-              {/* Background Decoration */}
+          <div className="w-2/3 animate-in fade-in slide-in-from-right-10 duration-500">
+            <div className="h-full bg-white/5 border border-white/10 rounded-2xl p-12 relative overflow-hidden backdrop-blur-sm shadow-2xl">
               <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
 
               <div key={activeProject} className="animate-in fade-in zoom-in duration-300">
@@ -95,6 +100,41 @@ export default function Projects() {
           </div>
         )}
       </div>
+
+      {/* Mobile Layout: Accordion Style */}
+      <div className="md:hidden flex flex-col gap-4">
+        {projects.map((project, index) => (
+            <div key={index} className="bg-white/5 border border-white/10 rounded-xl overflow-hidden transition-all duration-300">
+                <button
+                    onClick={() => toggleProject(index)}
+                    className={`w-full text-left p-6 flex justify-between items-center transition-colors ${activeProject === index ? 'bg-white/5 text-cyan-400' : 'text-gray-200'}`}
+                >
+                    <h3 className="text-xl font-bold">{project.title}</h3>
+                    <span className={`transform transition-transform duration-300 ${activeProject === index ? 'rotate-180' : ''}`}>
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </button>
+                
+                <div 
+                    className={`transition-all duration-300 ease-in-out ${activeProject === index ? 'max-h-[500px] opacity-100 p-6 pt-0' : 'max-h-0 opacity-0 p-0 overflow-hidden'}`}
+                >
+                    <p className="text-gray-300 text-base leading-relaxed mb-6 mt-4 border-t border-white/10 pt-4">
+                        {project.description}
+                    </p>
+                    {project.link !== "#" && (
+                        <a 
+                          href={project.link} 
+                          className="inline-flex items-center px-5 py-2 rounded-lg bg-cyan-600/90 hover:bg-cyan-600 text-white text-sm font-semibold transition-colors"
+                        >
+                           View Case Study
+                           <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
+                    )}
+                </div>
+            </div>
+        ))}
+      </div>
+
     </section>
   );
 }
