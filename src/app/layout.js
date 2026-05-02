@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "My Creative Portfolio",
+  title: "Thiruvelan-Portfolio",
   description: "A showcase of my skills, projects, and experience.",
 };
 

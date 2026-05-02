@@ -7,7 +7,8 @@ export default function MobileNav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "skills", "projects", "contact"];
+      const sections = ["home", "about", "skills", "projects", "certificates", "contact"];
+
       const scrollPosition = window.scrollY + 300; // Offset
 
       for (const section of sections) {
@@ -82,6 +83,16 @@ export default function MobileNav() {
         </svg>
       ),
     },
+    {
+      id: "certificates",
+      label: "Certificates",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-1.006 3.504 3.504 0 014.438 0 3.42 3.42 0 001.946 1.006 3.504 3.504 0 013.14 3.14 3.42 3.42 0 001.006 1.946 3.504 3.504 0 010 4.438 3.42 3.42 0 00-1.006 1.946 3.504 3.504 0 01-3.14 3.14 3.42 3.42 0 00-1.946 1.006 3.504 3.504 0 01-4.438 0 3.42 3.42 0 00-1.946-1.006 3.504 3.504 0 01-3.14-3.14 3.42 3.42 0 00-1.006-1.946 3.504 3.504 0 010-4.438 3.42 3.42 0 001.006-1.946 3.504 3.504 0 013.14-3.14z"></path>
+        </svg>
+      ),
+    },
+
     {
       id: "contact",
       label: "Contact",

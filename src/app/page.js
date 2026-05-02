@@ -6,6 +6,8 @@ import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 // Projects isn't used yet in the main flow, let's fix that
 import Projects from "@/components/Projects";
+import Certificates from "@/components/Certificates";
+
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
+      <Certificates />
+
       <Contact />
       
       {/* Background Decor */}
